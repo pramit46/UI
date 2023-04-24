@@ -1,0 +1,14 @@
+.navbar-container{
+    display: flex;
+}
+
+.navbar-list{
+    display: flex;
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+}
+.navbar-list-item{
+    margin-right: 0.5rem;
+    cursor: pointer;
+}

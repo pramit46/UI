@@ -1,0 +1,5 @@
+.input-container > input{
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  border: 1px grey solid;
+}

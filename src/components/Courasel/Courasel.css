@@ -1,0 +1,16 @@
+.courasel-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.active-view{
+    height:70vh;
+    width: 100%;
+}
+.active-view>img{
+    height: 100%;
+    width: 100%;
+}
