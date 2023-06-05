@@ -1,0 +1,175 @@
+.user-profile-page {
+    max-width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header {
+    background-color: #7579E7;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+  
+  .sidebar {
+    background-color: #9AB3F5;
+    color: #fff;
+    width: 25%;
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  .main {
+    width: 75%;
+    padding: 1rem;
+  }
+  
+  ul {
+    padding: 1rem;
+    width: 100%;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: 1rem;
+    width: 90%;
+  }
+  
+  /* a {
+    text-decoration: none;
+    display: flex;
+    
+    padding: 0.5rem;
+    color: #fff;
+    font-size: 1.3rem;
+  }
+  
+  a:hover {
+    text-decoration: none;
+    width: 100%;
+    background-color: #7579e79b;
+  } */
+  .order-list{
+    list-style-type: none;
+  }
+  .order-list-item{
+    color: #000;
+    display: flex;
+    background-color: #eeeeee;
+    text-decoration: none;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+    width: 100%;
+  }
+  .order-list-item:hover{
+    background-color: #d7d7d7;
+  }
+  .sidebar-list-item{
+    text-decoration: none;
+    display: flex;
+    
+    padding: 0.5rem;
+    color: #fff;
+    font-size: 1.3rem;
+  }
+  .sidebar-list-item:hover{
+    text-decoration: none;
+    width: 100%;
+    background-color: #7579e79b;
+  }
+  .active-item{
+    background-color: #7c80f69b;
+  }
+  .user-info{
+    display: flex;
+  }
+  .user-photo{
+    height: 300px;
+    width: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+ .user-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  margin-left: 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+ }
+ .user-saved-data{
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+ }
+ .user-saved-data-title{
+  border-bottom: 1px solid black;
+  width: 100%;
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 600;
+ }
+ .card-details{
+  margin-top: 1rem;
+  display: flex;
+  
+ }
+ .card-detail-label, .address-detail-label{
+  font-size: 18px;
+  font-weight: 600;
+ }
+ .user-saved-address{
+  display: flex;
+  margin-top: 2rem;
+ }
+ .saved-card{
+  text-align: left;
+  margin-left: 1rem;
+ }
+ .user-saved-adderss{
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  text-align: left;
+ }
+
+ .active-orders-header{
+  border-bottom: 1px solid black;
+ }
+ .product-image{
+  display: flex;
+ }
+
+ .product-image>img{
+  height: 100px;
+  width: 150px;
+ }
+ .product-delivery-detail{
+  display: flex;
+  margin: 0 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+ }
+ .product-name-delivery-card{
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+ }
+ .complete{
+  color: green;
+ }
+ .processing{
+  color: rgb(255, 204, 0);
+ }

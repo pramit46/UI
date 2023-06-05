@@ -1,0 +1,13 @@
+.cart-container{
+    display: flex;
+    flex-direction: column;
+}
+.card-cost{
+    display: flex;
+    justify-content: flex-end;
+}
+.proceed-to-checkout-button{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+}

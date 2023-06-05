@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Input from "../FormInput/Input";
+import LoginRegister from "../LoginRegister/LoginRegister";
 import Navbar from "../Navbar/Navbar";
+import {Link} from 'react-router-dom';
 
 import './Header.css'
+import icons from "../../constants/icons";
 
 export default function Header(props){
     const testItems = [
@@ -25,6 +28,14 @@ export default function Header(props){
     const [activeOptions,setActiveOptions] = useState([]);
     const [modalVisible, setModalVisible] = useState(false);
     const [searchKeyword,setSearchKeyword] = useState("");
+    const [loginVisible,setLoginVisible] = useState(false);
+    const usersOptionClickHandler = (execute)=>{
+        //check if user logged in
+        if(execute)
+        props.setLoginVisible(true);
+        // if user logged in
+        //navigate to profile page
+    }
 
     function OptionModal (props) {
         return(
@@ -48,14 +59,24 @@ export default function Header(props){
             <div className="header-navigation">
                 <div className="header-search-bar">
                     <Input placeholder={"Search"} onChangeHandler={setSearchKeyword}/>
-                    <div className="users-stuff">
-                        
+                    <div className="users-stuff" onClick={()=>usersOptionClickHandler(false)}>
+                        <div className="cart-icon-access">
+                            <Link to="/cart" className="cart-link">
+                                {icons.cart}
+                            </Link>
+                        </div>
+                        <div className="user-cion-access">
+                        <Link to="/user" className="user-page-link">
+                                {icons.user}
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 <div className="header-navbar">
                     <Navbar expandOptions={(options)=>{setActiveOptions(options);setModalVisible(true)}} navItems={testItems}/>
                 </div>
             </div>
+            
         </div>
     )
 }

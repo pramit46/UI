@@ -7,10 +7,19 @@
 }
 
 .active-view{
+    display: flex;
+    flex-direction: column;
     height:70vh;
     width: 100%;
 }
 .active-view>img{
     height: 100%;
     width: 100%;
+}
+
+.product-name{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    background-color: #7579e71c;
 }

@@ -30,6 +30,9 @@ export default function Courasel(props){
         <div className="courasel-container">
             <div className="active-view">
                 <img src={props.slides[currentIndex].src} alt="" />
+                {props.slides[currentIndex].title&&<div className="product-name">
+                    {props.slides[currentIndex].title}
+                </div>}
             </div>
         </div>
     );

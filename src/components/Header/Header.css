@@ -13,16 +13,16 @@
 }
 .header-logo{
     display: flex;
-    height: 55px;
+    height: 72px;
     width: 5%;
-    background-color: coral;
+    background-color: #7579E7;
 }
 .header-search-bar{
     display: flex;
     justify-content: center;
     padding: 0.2rem 0;
     width: 100%;
-    background-color: blanchedalmond;
+    background-color: #7579E7;
 }
 .header-navbar{
     display: flex;
@@ -30,7 +30,7 @@
     justify-content: center;
     padding: 0.2rem 0;
     width: 100%;
-    background-color: rgb(255, 214, 152);
+    background-color: #9AB3F5;
 }
 .modal-list{
     list-style-type: none;
@@ -43,9 +43,22 @@
     padding: 1rem;
 }
 .users-stuff{
-    width: 100px;
-    height: 20px;
-    background-color: rgb(54, 153, 239);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
     position: absolute;
+    padding: 0.3rem 1rem;
+    color: #fff;
     right: 0;
+}
+.cart-link{
+    text-decoration: none;
+    color: #fff;
+    margin-right: 1rem;
+}
+.user-page-link{
+    text-decoration: none;
+    color: #fff;
+    margin-right: 1rem;
 }

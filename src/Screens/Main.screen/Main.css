@@ -1,0 +1,82 @@
+.welcome-header{
+    display: flex;
+}
+.text-greeting{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding: 1rem;
+    align-items: flex-start;
+    align-content: center;
+}
+.image-part{
+    display: flex;
+    flex: 1;
+}
+
+.image-part>img{
+    height: 100%;
+    width: 100%;
+}
+
+.very-big-text{
+    font-size: 42px;
+    font-weight: 600;
+}
+.just-big-text{
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.products-courasel-header{
+    text-align: left;
+    margin-top: 1rem;
+    font-size: 36px;
+    font-weight: 600;
+    padding-left: 1rem;
+}
+.products{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    padding: 1rem;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s; */
+    padding-bottom: 1.3rem;
+}
+
+.footer{
+    margin-top: 1rem;
+    background-color: #7579E7;
+    padding: 1rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+}
+.contact-us-part{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.contact-us-title{
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: left;
+}
+.contact-us-text{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    max-width: 25vw;
+    word-wrap: normal;
+    text-align: left;
+}
+.email-phone-etc{
+    text-align: left;
+    flex: 1;
+    margin-top: 2rem;
+}
