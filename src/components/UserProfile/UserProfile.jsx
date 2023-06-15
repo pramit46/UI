@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import './UserProfile.css'
 import icons from '../../constants/icons';
+import ProductInfo from '../ProductInfo/ProductInfo';
 
 
 
@@ -86,8 +87,19 @@ function UserProfilePage(props) {
 
 function OrdersPage(props){
   const orders = props.orders;
+  const [showProduct,setShowProduct] = useState(false);
+  const [activeProduct,setactiveProduct] = useState({
+    productId: "id",
+    name:"Some Product",
+    productImage:"https://vinylwindowspro.ca/wp-content/uploads/2016/10/dummy.jpg",
+    productRating: "4",
+    productCost:"$12.6",
+    productDescription:"some test long description"
+})
   return(
-    <div className="main">
+    <>
+    {showProduct&&<ProductInfo closeProductInfo={()=>setShowProduct(false)} activeProduct={activeProduct}/>}
+    <div className="main-orders">
           <div className="active-orders-div">
           <h2 className='active-orders-header'>Active Orders</h2>
           <ul className='order-list'>
@@ -100,9 +112,7 @@ function OrdersPage(props){
                   </div>
                   <div className="product-delivery-detail">
                     <div className="product-name-delivery-card clickable" onClick={()=>{
-                      props.setActiveProduct(order.productId);
-                      const host = window.location.origin;
-                      window.location.href = host+`/products`;
+                      setShowProduct(true)
                     }}>
                       {order.name? order.name:"Product Name"}
                     </div>
@@ -135,9 +145,7 @@ function OrdersPage(props){
                   </div>
                   <div className="product-delivery-detail">
                     <div className="product-name-delivery-card clickable" onClick={()=>{
-                      props.setActiveProduct(order.productId);
-                      const host = window.location.origin;
-                      window.location.href = host+`/products`;
+                      setShowProduct(true)
                     }}>
                       {order.name? order.name:"Product Name"}
                     </div>
@@ -155,6 +163,7 @@ function OrdersPage(props){
           </ul>
           </div>
         </div>
+    </>
   )
 }
 function UserProfile(props){
@@ -162,9 +171,9 @@ function UserProfile(props){
     <>
        <div className="main">
           <div className="user-info">
-            <div className="user-photo">
+            {/* <div className="user-photo">
               <img src="https://i.pinimg.com/736x/8b/16/7a/8b167af653c2399dd93b952a48740620.jpg" alt="" width={"100%"} height={"100%"}/>
-            </div>
+            </div> */}
             <div className="user-details">
               <div className="user-name">
                 Name: Test User
@@ -175,9 +184,9 @@ function UserProfile(props){
             </div>
           </div>
           <div className="user-saved-data">
-            <div className="user-saved-data-title">
+            {/* <div className="user-saved-data-title">
               USER SAVED DATA
-            </div>
+            </div> */}
             <div className="card-details">
               <div className="card-detail-label">
                 Saved Card Details: 

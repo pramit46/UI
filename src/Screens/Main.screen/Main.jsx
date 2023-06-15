@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import './Main.css'
 import ProductCourasel from "../../components/Courasel/ProductsCourasel";
 import Courasel from "../../components/Courasel/Courasel";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import ProductInfo from "../../components/ProductInfo/ProductInfo";
 const dummySlides = [
     {
       src:"https://petshopindia.com/image/cache/catalog/Fekrix/fekrix-pet-food/fekrix-cat-adult-mackerel-7kg-268x372.jpg",
@@ -26,8 +27,18 @@ const dummySlides = [
     }
   ];
 export default function Main(props){
+    const [showProduct,setShowProduct] = useState(false);
+    const [activeProduct,setActiveProduct] = useState({
+        productId: "id",
+        name:"Some Product",
+        productImage:"https://vinylwindowspro.ca/wp-content/uploads/2016/10/dummy.jpg",
+        productRating: "4",
+        productCost:"$12.6",
+        productDescription:"some test long description"
+    })
     return(
         <>
+        {showProduct&&<ProductInfo closeProductInfo={()=>setShowProduct(false)} activeProduct={activeProduct}/>}
             <div className="welcome-header">
                 <div className="text-greeting">
                     <span className="very-big-text">
@@ -52,16 +63,23 @@ export default function Main(props){
                     OUR PRODUCTS
                 </div>
                 <div className="products">
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
+                    <ProductCard onClickHandler = {()=>setShowProduct(true)}/>
+                    <ProductCard onClickHandler = {()=>setShowProduct(true)}/>
+                    <ProductCard onClickHandler = {()=>setShowProduct(true)}/>
+
+                </div>
+                <div className="clickable view-more-button" onClick={()=>{
+                    const host = window.location.origin;
+                    window.location.href = host+`/products`;
+                }}>
+                    {"View All Products ->"}
                 </div>
             </div>
             <div className="footer">
                 <div className="contact-us-part">
                     <div className="contact-us-title">
                         Contact Us:
-                    </div><div className="contact-us-text">
+                    </div><div className="contact-us-text ">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam, felis nec consequat volutpat
                     </div>
 

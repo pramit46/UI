@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Cart.css';
 import { Link } from 'react-router-dom';
 import icons from '../../constants/icons';
 import Button from '../../components/Button/Button';
+import ProductInfo from '../../components/ProductInfo/ProductInfo';
 
 export default function Cart(props){
     const orders = props.cartProducts;
+    const [showProduct,setShowProduct] = useState(false);
+    const [activeProduct,setactiveProduct] = useState({
+        productId: "id",
+        name:"Some Product",
+        productImage:"https://vinylwindowspro.ca/wp-content/uploads/2016/10/dummy.jpg",
+        productRating: "4",
+        productCost:"$12.6",
+        productDescription:"some test long description"
+    })
     return (
         <>
+        {showProduct&&<ProductInfo closeProductInfo={()=>setShowProduct(false)} activeProduct={activeProduct}/>}
         <div className="cart-container">
             <div className="product-page-header">
                 <div className="logo clickable" onClick={()=>{
@@ -36,7 +47,7 @@ export default function Cart(props){
                 <ul className='order-list'>
                   {orders? <>
                     {orders.map(order => (
-                    <li key={order.id}>
+                    <li className='cart-card' key={order.id}>
                       <div className="order-list-item" style={{flexDirection:'column'}}>
                         <div className='delivery-details-card' style={{display:'flex'}}>
                             <div className="product-image" >
@@ -45,8 +56,8 @@ export default function Cart(props){
                             <div className="product-delivery-detail">
                                 <div className="product-name-delivery-card clickable" onClick={()=>{
                                     // props.setActiveProduct(order.productId);
-                                    const host = window.location.origin;
-                                    window.location.href = host+`/products`;
+                                    setShowProduct(true)
+                                    
                                 }}>
                                     {order.productName? order.productName:"Product Name"}
                                 </div>
@@ -55,13 +66,12 @@ export default function Cart(props){
                                     Quantity: {order.productQty}
                                 </div>
                             </div>
-                        </div>
-                        <div className="card-cost">
+                            <div className="card-cost">
                             Price: ${order.productQty*order.productPrice}
                         </div>
-                      </div>
+                        </div>
                         
-                      
+                      </div>
                     </li>
                   ))}
                   </>:
@@ -71,7 +81,10 @@ export default function Cart(props){
                 </ul>
             </div>
             <div className="proceed-to-checkout-button">
-                <Button title={"Proceed To Checkout"} onClickHandler={()=>{console.log('tester code')}}/>
+                <Button title={"Proceed To Checkout"} onClickHandler={()=>{
+                        console.log('tester code');
+
+                    }}/>
             </div>
         </div>
         </>

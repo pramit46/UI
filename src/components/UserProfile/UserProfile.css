@@ -28,7 +28,14 @@
   }
   
   .main {
-    width: 75%;
+    width: 80%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .main-orders{
+    width: 80%;
     padding: 1rem;
   }
   
@@ -109,7 +116,7 @@
   margin-top: 0.5rem;
  }
  .user-saved-data{
-  margin-top: 1.5rem;
+  
   display: flex;
   flex-direction: column;
  }

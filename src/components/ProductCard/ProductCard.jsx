@@ -13,7 +13,7 @@ export default function ProductCard(props){
                 <img src="https://vinylwindowspro.ca/wp-content/uploads/2016/10/dummy.jpg" alt="" srcset="" />
             </div>
             <div className="product-title clickable" onClick={()=>{
-                window.location.href = window.location.origin+'/products';
+                props.onClickHandler()
             }}>
                 Product Title
             </div>
