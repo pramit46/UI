@@ -27,7 +27,7 @@ export default function ProductInfo(props){
                             {product.productCost}
                         </div>
                         <div className="add-to-cart-button">
-                            <Button title={"Add to Cart"} onClickHandler={()=>{console.log('test')}}/>
+                            <Button title={"Add to Cart"} onClickHandler={props.addToCart}/>
 
                         </div>
                     </div>

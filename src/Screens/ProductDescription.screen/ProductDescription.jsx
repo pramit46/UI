@@ -18,10 +18,15 @@ export default function ProductDescription(props){
         productCost:"$12.6",
         productDescription:"some test long description"
     })
-    useEffect(()=>{
-        //fetch product details for server
+    
+    function addToCart(productId){
+        
+    }
 
-    });
+    useEffect(()=>{
+        
+
+    },[]);
     const [showProduct,setShowProduct] = useState(false);
     const [activeProduct,setactiveProduct] = useState({
         productId: "id",
@@ -35,28 +40,7 @@ export default function ProductDescription(props){
         <>
         {showProduct&&<ProductInfo closeProductInfo={()=>setShowProduct(false)} activeProduct={activeProduct}/>}
             <div className="product-display-container">
-                <div className="product-page-header">
-                    <div className="logo clickable" onClick={()=>{
-                    window.location.href = window.location.origin;
-                }}>
-                        LOGO
-                    </div>
-                    <div className="product-page-heading">
-                        {product.name}
-                    </div>
-                        <div className="cart-user-navigation">
-                        <div className="cart-icon-access">
-                                <Link to="/cart" className="cart-link">
-                                    {icons.cart}
-                                </Link>
-                            </div>
-                            <div className="user-cion-access">
-                            <Link to="/user" className="user-page-link">
-                                    {icons.user}
-                                </Link>
-                            </div>
-                        </div>
-                </div>
+                
                 <div className="section-1">
                     <ProductCard onClickHandler = {()=>setShowProduct(true)}/>
                     <ProductCard onClickHandler = {()=>setShowProduct(true)}/>

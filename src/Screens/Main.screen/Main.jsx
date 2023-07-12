@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './Main.css'
 import ProductCourasel from "../../components/Courasel/ProductsCourasel";
 import Courasel from "../../components/Courasel/Courasel";
@@ -35,10 +35,13 @@ export default function Main(props){
         productRating: "4",
         productCost:"$12.6",
         productDescription:"some test long description"
-    })
+    });
+
+
+
     return(
         <>
-        {showProduct&&<ProductInfo closeProductInfo={()=>setShowProduct(false)} activeProduct={activeProduct}/>}
+        {showProduct&&<ProductInfo closeProductInfo={()=>setShowProduct(false)} activeProduct={activeProduct} addToCart={props.addToCart}/>}
             <div className="welcome-header">
                 <div className="text-greeting">
                     <span className="very-big-text">
@@ -62,37 +65,115 @@ export default function Main(props){
                 <div className="products-courasel-header">
                     OUR PRODUCTS
                 </div>
-                <div className="products">
-                    <ProductCard onClickHandler = {()=>setShowProduct(true)}/>
-                    <ProductCard onClickHandler = {()=>setShowProduct(true)}/>
-                    <ProductCard onClickHandler = {()=>setShowProduct(true)}/>
-
+                <div className="product-catagories">
+                    <div className="product-catagory">
+                        <div className="product-subheader">
+                            Food:
+                        </div>
+                        <div className="products">
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+        
+                        </div>
+                        <div className="clickable view-more-button" onClick={()=>{
+                            const host = window.location.origin;
+                            window.location.href = host+`/products`;
+                            }}>
+                            {"View All Products ->"}
+                        </div>
+                    </div>
+                    <div className="product-catagory">
+                        <div className="product-subheader">
+                            Appearal:
+                        </div>
+                        <div className="products">
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+        
+                        </div>
+                        <div className="clickable view-more-button" onClick={()=>{
+                            const host = window.location.origin;
+                            window.location.href = host+`/products`;
+                            }}>
+                            {"View All Products ->"}
+                        </div>
+                    </div>
+                    <div className="product-catagory">
+                        <div className="product-subheader">
+                            Toys:
+                        </div>
+                        <div className="products">
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+        
+                        </div>
+                        <div className="clickable view-more-button" onClick={()=>{
+                            const host = window.location.origin;
+                            window.location.href = host+`/products`;
+                            }}>
+                            {"View All Products ->"}
+                        </div>
+                    </div>
+                    <div className="product-catagory">
+                        <div className="product-subheader">
+                            Food:
+                        </div>
+                        <div className="products">
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+        
+                        </div>
+                        <div className="clickable view-more-button" onClick={()=>{
+                            const host = window.location.origin;
+                            window.location.href = host+`/products`;
+                            }}>
+                            {"View All Products ->"}
+                        </div>
+                    </div>
+                    <div className="product-catagory">
+                        <div className="product-subheader">
+                            Food:
+                        </div>
+                        <div className="products">
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+        
+                        </div>
+                        <div className="clickable view-more-button" onClick={()=>{
+                            const host = window.location.origin;
+                            window.location.href = host+`/products`;
+                            }}>
+                            {"View All Products ->"}
+                        </div>
+                    </div>
+                    <div className="product-catagory">
+                        <div className="product-subheader">
+                            Food:
+                        </div>
+                        <div className="products">
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+        
+                        </div>
+                        <div className="clickable view-more-button" onClick={()=>{
+                            
+                            const host = window.location.origin;
+                            window.location.href = host+`/products`;
+                            }}>
+                            {"View All Products ->"}
+                        </div>
+                    </div>
                 </div>
-                <div className="clickable view-more-button" onClick={()=>{
-                    const host = window.location.origin;
-                    window.location.href = host+`/products`;
-                }}>
-                    {"View All Products ->"}
-                </div>
+                
+                
             </div>
-            <div className="footer">
-                <div className="contact-us-part">
-                    <div className="contact-us-title">
-                        Contact Us:
-                    </div><div className="contact-us-text ">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquam, felis nec consequat volutpat
-                    </div>
-
-                </div>
-                <div className="email-phone-etc">
-                    <div className="email">
-                        test.someone@email.com
-                    </div>
-                    <div className="phone">
-                        9425434561
-                    </div>
-                </div>
-            </div>
+            
         </>
     )
 }

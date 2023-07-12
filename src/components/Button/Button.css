@@ -1,0 +1,7 @@
+.button-container > button{
+    background-color: #161c48dc;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+}

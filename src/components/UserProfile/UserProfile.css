@@ -20,7 +20,7 @@
   }
   
   .sidebar {
-    background-color: #9AB3F5;
+    background-color: #1d245d;
     color: #fff;
     width: 25%;
     flex: 1;
@@ -179,4 +179,9 @@
  }
  .processing{
   color: rgb(255, 204, 0);
+ }
+ .editable-content{
+  border: #000 solid 1px;
+  margin-top: 0.2rem;
+  padding: 0 0.2rem;
  }

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import icons from '../../constants/icons';
 import Button from '../../components/Button/Button';
 import ProductInfo from '../../components/ProductInfo/ProductInfo';
+import Cookies from 'js-cookie';
 
 export default function Cart(props){
     const orders = props.cartProducts;
@@ -21,28 +22,7 @@ export default function Cart(props){
         <>
         {showProduct&&<ProductInfo closeProductInfo={()=>setShowProduct(false)} activeProduct={activeProduct}/>}
         <div className="cart-container">
-            <div className="product-page-header">
-                <div className="logo clickable" onClick={()=>{
-                    window.location.href = window.location.origin;
-                }}>
-                    LOGO
-                </div>
-                <div className="product-page-heading">
-                    Cart
-                </div>
-                    <div className="cart-user-navigation">
-                    <div className="cart-icon-access">
-                            <Link to="/cart" className="cart-link">
-                                {icons.cart}
-                            </Link>
-                    </div>
-                    <div className="user-cion-access">
-                    <Link to="/user" className="user-page-link">
-                            {icons.user}
-                        </Link>
-                    </div>
-                </div>
-            </div>
+            
             <div className="cart-main-content">
                 <ul className='order-list'>
                   {orders? <>
@@ -82,8 +62,12 @@ export default function Cart(props){
             </div>
             <div className="proceed-to-checkout-button">
                 <Button title={"Proceed To Checkout"} onClickHandler={()=>{
-                        console.log('tester code');
-
+                        if(Cookies.get('petstoreUserLogin')=="true"){
+                            console.log('checkout');
+                        }
+                        else{
+                            console.log('login first');
+                        }
                     }}/>
             </div>
         </div>

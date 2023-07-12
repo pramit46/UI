@@ -40,28 +40,7 @@ function UserProfilePage(props) {
 
   return (
     <div className="user-profile-page">
-      <div className="product-page-header">
-                    <div className="logo clickable" onClick={()=>{
-                    window.location.href = window.location.origin;
-                }}>
-                        LOGO
-                    </div>
-                    <div className="product-page-heading">
-                        {user.name}
-                    </div>
-                        <div className="cart-user-navigation">
-                        <div className="cart-icon-access">
-                                <Link to="/cart" className="cart-link">
-                                    {icons.cart}
-                                </Link>
-                            </div>
-                            <div className="user-cion-access">
-                            <Link to="/user" className="user-page-link">
-                                    {icons.user}
-                                </Link>
-                            </div>
-                        </div>
-                </div>
+    
       
       <div className="content">
         <div className="sidebar">
@@ -176,10 +155,10 @@ function UserProfile(props){
             </div> */}
             <div className="user-details">
               <div className="user-name">
-                Name: Test User
+                Name: <span className='editable-content'>Test User</span>
               </div>
               <div className="user-contact" style={{marginTop:'1rem'}}>
-                Contact: 345678902
+                Contact: <span className='editable-content'>345678902</span>
               </div>
             </div>
           </div>
@@ -205,14 +184,14 @@ function UserProfile(props){
                 Saved Card Details: 
               </div>
               <div className="user-saved-adderss">
-                <div className="street-address">
+                <div className="street-address editable-content" contentEditable={true}>
                   26985 Lorem Ipsum, 32 Dolor Set
                 </div>
-                <div className="city-address">
+                <div className="city-address editable-content" contentEditable={true}>
                   Lake Forest, CA
                 </div>
-                <div className="pin-code">
-                  Pin: 560067
+                <div className="pin-code" style={{marginTop:'0.2rem'}}>
+                  Pin: <span className='editable-content' contentEditable={true}>560067</span>
                 </div>
               </div>
             </div>

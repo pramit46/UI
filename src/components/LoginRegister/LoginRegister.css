@@ -33,14 +33,14 @@ label{
   .tabs button {
     background: none;
     border: none;
-    color: coral;
+    color: #161C48;
     font-size: 20px;
     cursor: pointer;
     padding: 10px 20px;
   }
   
   .tabs button.active {
-    background-color: rgb(252, 114, 64);
+    background-color: #161C48;
     color: #fff;
   }
   
@@ -63,7 +63,7 @@ label{
   }
   
   .login-form button, .register-form button {
-    background-color: coral;
+    background-color: #161C48;
     color: #fff;
     border: none;
     padding: 10px 20px;

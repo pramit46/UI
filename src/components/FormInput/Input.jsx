@@ -8,9 +8,14 @@ export default function Input(props){
         console.log(value);
         props.onChangeHandler(value)
     }
+    const searchSubmitHandler = (e)=>{
+        e.preventDefault();
+    }
     return (
         <div className="input-container">
-            <input placeholder={props.placeholder} type="search" className="search-input" onInput={onInputChangeHandler} />
+            <form action="" className="input-form" onSubmit={searchSubmitHandler}>
+                <input placeholder={props.placeholder} type="search" className="search-input" onInput={onInputChangeHandler} />
+            </form>
         </div>
     )
 }

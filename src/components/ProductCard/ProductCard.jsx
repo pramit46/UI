@@ -24,7 +24,7 @@ export default function ProductCard(props){
                 <RatingStars rating={3} />
             </div>
             <div className="add-to-cart-button">
-                <Button title={"Add To Cart"} onClickHandler={()=>{console.log('test add to cart')}}/>
+                <Button title={"Add To Cart"} onClickHandler={props.addToCart}/>
             </div>
         </div>
         </>

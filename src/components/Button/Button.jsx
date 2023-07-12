@@ -6,7 +6,7 @@ export default function Button(props){
     return(
 
         <div className="button-container">
-            <button onClick={props.onclickHandler}>{props.title}</button>
+            <button onClick={()=>props.onClickHandler("product")}>{props.title}</button>
         </div>
         
     )

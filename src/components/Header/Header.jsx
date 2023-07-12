@@ -3,28 +3,30 @@ import Input from "../FormInput/Input";
 import LoginRegister from "../LoginRegister/LoginRegister";
 import Navbar from "../Navbar/Navbar";
 import {Link} from 'react-router-dom';
+import logo from '../../assets/logo/logo_pet_store.jpeg';
 
 import './Header.css'
 import icons from "../../constants/icons";
 
 export default function Header(props){
-    const testItems = [
-        {
-            name:"test1",
-            link:"some://href",
-            options:["a1","a2","a3","a4"]
-        },
-        {
-            name:"test2",
-            link:"some://href",
-            options:["b1","b2","b3","b4"]
-        },
-        {
-            name:"test3",
-            link:"some://href",
-            options:["c1","c2","c3","xc4"]
-        }
-    ];
+    // const testItems = [
+    //     {
+    //         name:"test1",
+    //         link:"some://href",
+    //         options:["a1","a2","a3","a4"]
+    //     },
+    //     {
+    //         name:"test2",
+    //         link:"some://href",
+    //         options:["b1","b2","b3","b4"]
+    //     },
+    //     {
+    //         name:"test3",
+    //         link:"some://href",
+    //         options:["c1","c2","c3","xc4"]
+    //     }
+    // ];
+    const testItems = [];
     const [activeOptions,setActiveOptions] = useState([]);
     const [modalVisible, setModalVisible] = useState(false);
     const [searchKeyword,setSearchKeyword] = useState("");
@@ -53,9 +55,13 @@ export default function Header(props){
             <div className="modal-container">
                 {modalVisible && <OptionModal mouseOutHandler = {()=>{console.log("wtf");setModalVisible(false)}} options={activeOptions}/>}
             </div>
+            <Link to={"/"}>
             <div className="header-logo">
                 
+                    <img src={logo} alt="" />
+                
             </div>
+            </Link>
             <div className="header-navigation">
                 <div className="header-search-bar">
                     <Input placeholder={"Search"} onChangeHandler={setSearchKeyword}/>
