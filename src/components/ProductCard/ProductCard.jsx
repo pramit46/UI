@@ -10,7 +10,7 @@ export default function ProductCard(props){
         <>
         <div className="product-card-container">
             <div className="product-card-image">
-                <img src="https://vinylwindowspro.ca/wp-content/uploads/2016/10/dummy.jpg" alt="" srcset="" />
+                <img src="https://e7.pngegg.com/pngimages/130/381/png-clipart-logo-pedigree-petfoods-dog-food-brand-dog-food-animals.png" alt="" srcset="" />
             </div>
             <div className="product-title clickable" onClick={()=>{
                 props.onClickHandler()

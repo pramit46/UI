@@ -74,6 +74,8 @@ export default function Main(props){
                             <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
                             <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
                             <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+
         
                         </div>
                         <div className="clickable view-more-button" onClick={()=>{
@@ -88,10 +90,11 @@ export default function Main(props){
                             Appearal:
                         </div>
                         <div className="products">
+                        <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
                             <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
                             <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
                             <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
-        
+
                         </div>
                         <div className="clickable view-more-button" onClick={()=>{
                             const host = window.location.origin;
@@ -142,6 +145,9 @@ export default function Main(props){
                             <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
                             <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
                             <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+                            <ProductCard onClickHandler = {()=>setShowProduct(true)} addToCart={(product)=>props.addToCart(product)}/>
+
         
                         </div>
                         <div className="clickable view-more-button" onClick={()=>{

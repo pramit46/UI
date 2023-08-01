@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import axios from 'axios';
 
 import './LoginRegister.css'
 import Cookies from "js-cookie";
 
-const authBaseURL = "http://<ip>:5006/"
+const authBaseURL = "http://104.197.228.156:5006/"
 
 function LoginForm(props) {
   const [emailId,setEmailId] = useState("");
@@ -17,7 +18,8 @@ const [password,setPassword] = useState("");
         }
         fetch(authBaseURL+"sign_in",{
           method:"POST",
-          headers:{'Authoriozation':`Bearer${Cookies.get('petStoreToken')}`},
+          
+          headers:{'Authoriozation':`Bearer${Cookies.get('petStoreToken')}`,'Access-Control-Allow-Origin': '*','Content-Type':'application/json'},
           body:bodyData
         })
         .then(response=>response.json())
@@ -49,18 +51,27 @@ const [password,setPassword] = useState("");
 const [contact,setContact] = useState("");
 const [address,setAddress] = useState("");
 
-    const loginFormSubmitHandler=(e)=>{
+    const registerFormSubmitHandler=(e)=>{
         e.preventDefault();
         props.closeHandler();
-        fetch(authBaseURL+"sign_up"+`?email_id=${emailId}&password=${password}&contact=${contact}&address=${address}`,{
-          headers:{'Authoriozation':`Bearer${Cookies.get('petStoreToken')}`},
-          method:"POST"
+        axios.post(authBaseURL+"sign_up"+`?email_id=${emailId}&password=${password}&contact=${contact}&address=${address}`,{
+          
+          headers:{
+            'Authorization':`Bearer${Cookies.get('petStoreToken')}`,
+            'Access-Control-Allow-Origin': '*',
+            "Content-Type":"application/json",
+              },
+          
+          
         })
         .then(response=>response.json())
         .then(data=>{
           Cookies.set('petstoreUserLogin','true');
           console.log(data);
         });
+        // fetch('http://104.197.228.156:5006/')
+        // .then(response=>console.log(response))
+        // .catch(err=>console.log(err))
         props.onClose()
     }
     return (
@@ -76,7 +87,7 @@ const [address,setAddress] = useState("");
           <label htmlFor="email">Contact</label>
           <input type="email" name="email" onChange={(event)=>setContact(event.target.value)}/>
           
-          <button type="submit" onClick={loginFormSubmitHandler}>Register</button>
+          <button type="submit" onClick={registerFormSubmitHandler}>Register</button>
         </form>
       </div>
     );
