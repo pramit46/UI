@@ -16,9 +16,10 @@ const [password,setPassword] = useState("");
           email_id:emailId,
           password:password,
         }
-        fetch(authBaseURL+"sign_in",{
-          method:"POST",
+        fetch(authBaseURL+"sign_in/",{
           
+         
+          method:"POST",
           headers:{'Authoriozation':`Bearer${Cookies.get('petStoreToken')}`,'Access-Control-Allow-Origin': '*','Content-Type':'application/json'},
           body:bodyData
         })
@@ -54,12 +55,13 @@ const [address,setAddress] = useState("");
     const registerFormSubmitHandler=(e)=>{
         e.preventDefault();
         props.closeHandler();
-        axios.post(authBaseURL+"sign_up"+`?email_id=${emailId}&password=${password}&contact=${contact}&address=${address}`,{
+        fetch(authBaseURL+"sign_up/"+`?email_id=${emailId}&password=${password}&contact=${contact}&address=${address}`,{
           
+          method:"POST",
           headers:{
             'Authorization':`Bearer${Cookies.get('petStoreToken')}`,
             'Access-Control-Allow-Origin': '*',
-            "Content-Type":"application/json",
+            "Content-Type":"text/plain",
               },
           
           
